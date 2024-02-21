@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from SamyuktX import Samyuktxdb
+from SamyuktX import SamyuktXdb
 
 
 async def put(
@@ -40,9 +40,9 @@ async def put(
         "req": ruser,
         "user_id": user_id,
     }
-    get = Samyuktxdb.get(chat_id)
+    get = SamyuktXdb.get(chat_id)
     if get:
-        Samyuktxdb[chat_id].append(put_f)
+        SamyuktXdb[chat_id].append(put_f)
     else:
-        Samyuktxdb[chat_id] = []
-        Samyuktxdb[chat_id].append(put_f)
+        SamyuktXdb[chat_id] = []
+        SamyuktXdb[chat_id].append(put_f)
