@@ -24,7 +24,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 from pytgcalls.types import AudioPiped, HighQualityAudio, Update
 
-from SamyuktX import BOT_ID, BOT_USERNAME, app, app2, Samyuktxdb, pytgcalls
+from SamyuktX import BOT_ID, BOT_USERNAME, app, app2, SamyuktXdb, pytgcalls
 from SamyuktX.Helpers import _clear_, buttons, gen_thumb
 
 welcome = 20
@@ -69,7 +69,7 @@ async def swr_handler(_, chat_id: int):
 async def on_stream_end(pytgcalls, update: Update):
     chat_id = update.chat_id
 
-    get = Samyuktxdb.get(chat_id)
+    get = SamyuktXdb.get(chat_id)
     if not get:
         try:
             await _clear_(chat_id)
