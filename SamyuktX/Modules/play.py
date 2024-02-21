@@ -47,7 +47,7 @@ from SamyuktX import (
     LOGGER,
     app,
     app2,
-    Samyuktxdb,
+    SamyuktXdb,
     pytgcalls,
 )
 from SamyuktX.Helpers.active import add_active_chat, is_active_chat, stream_on
@@ -217,7 +217,7 @@ async def play(_, message: Message):
             ruser,
             message.from_user.id,
         )
-        position = len(samyuktxdb.get(message.chat.id))
+        position = len(SamyuktXdb.get(message.chat.id))
         qimg = await gen_qthumb(videoid, message.from_user.id)
         await message.reply_photo(
             photo=qimg,
